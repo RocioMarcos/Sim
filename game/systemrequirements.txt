@@ -1,0 +1,64 @@
+
+* SHOOTER 4 POLICE TRAINEES *
+
+Shooter game where you can practice your shooting skills by hitting villains. ¡You must avoiding hitting civilians! And be aware of the obstacles on your surroundings.
+(Resume: Shooter that can provide a function to focus an element and change his status)
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Starting date:
+15/5/2023
+
+Deadlines:
+• Finish:
+  5/6/2023
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Mockup must be made like a 2d mockup of a 3d scenario (a background, up to 5 capes of objects, 1st person-arms&gun), art is not essential
+On a first basis, only the target will be functional, then civils, then levels and lastly the varieties of guns (not a principal requirement)
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Requirements:
+• ! It has to work with ONLY clicks, since it will be played with a toy-gun
+• Tutorial w/basic ilustrations can be w/simple animations
+• Do not show 1st person traits (hands, guns, etc...)
+• Must show score (shoot targets = positive score // shoot civils = negative score // shoot obstacles = none or less negative points than hitting civils)
+• The scores will not be stored
+• You can pause the simulator by shooting the menu button
+• Guns will have to recharge (Secondary button)
+• It must be 2 options: 
+  - One player (13 ammo)
+  - Two players (15 ammo)
+• As a side option, it will be posible to use the gun sight ()
+
+Thinking needed:
+• Targets (2 types: Common targets and Villains)
+• Civils
+• Levels (These ones will differ on recharge time and speed of people/obstacles and scenarios - As an example: on easy levels will be parked cars // on a medium level, cars will pass slowly, park for an x time and then run again // on a harder level, cars will pass all the time at different speed and some of them will park, leaving people in front of them)
+
+Art needed: 
+• GUI 
+• Ingame elements:
+  - Different types of targets (At least 5 types of each) - Villains(Mañeritos) // Common targets
+  - Different types of civils (At least 5)
+  - Different types of obstacles (At least 5)
+  - Background (If its possible, a video or a long animation)
+
+Music needed:
+• Sound effects:
+  - Shots
+  - Ambientation (can be people talking, car noises, police reports, steps)
+
+Changes that will be made on the basic template:
+• Submenu while playing will only be accesible by one command (Not "always on display")
+• Save menu will be erased
+• Charge menu will be erased
+• On options you will be able (only) to change music, change background music, change difficulty
+• Credits will be shown at start (Created by...)
+• Help will show a mini-tutorial with controls (Button of tutorial will always stay on display)
+• Must be resizable without loosing ratio
+• On "standby" tutorial will be displayed
+
+----------------------------------------------------------------------------------------------------------------------------------

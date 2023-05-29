@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 508: the action keyword argument was not given a value.
-    timer 1.0 action if(countdown_time > 0, true = SetVariable("countdown_time", countdown_time - 1.0), false = Show("time_is_up")) repeat if(countdown_time > 0, true = True, false = False)
-                     ^
+File "game/script.rpy", line 510: expected statement.
+    s
+     ^
 
 Ren'Py Version: Ren'Py 8.1.0.23051307
-Wed May 24 16:28:49 2023
+Mon May 29 15:38:22 2023

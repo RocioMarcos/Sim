@@ -151,7 +151,7 @@ define config.save_directory = "Sim-1684785217"
 ##
 ## El icono mostrado en la barra de tareas.
 
-define config.window_icon = "gui/window_icon.png"
+define config.window_icon = "gui/logo.png"
 
 
 ## Configuración de 'Build' ####################################################

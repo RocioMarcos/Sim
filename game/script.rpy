@@ -6,20 +6,20 @@
         #Cuchillo
         target1_start_x = 1110
         target1_start_y = 298
-        target1_down_time = (3.0, 5.0)
-        target1_up_time = (3.0, 5.0)
+        target1_down_time = (0.5, 3.0)
+        target1_up_time = (1.0, 5.0)
 
         #Pistola
         target2_start_x = 1565
         target2_start_y = 347
         target2_down_time = (5.0, 8.0)
-        target2_up_time = (3.0, 5.0)
+        target2_up_time = (1.0, 5.0)
 
         # Hacha
         target3_start_x = 396
         target3_start_y = 286
         target3_down_time = (3.0, 5.0)
-        target3_up_time = (1.0, 3.0)
+        target3_up_time = (1.0, 8.0)
 
         for i in range(1):
 
@@ -54,12 +54,12 @@
 
         target1_sprites[-1].idle_animation_direction = "up"
         target1_sprites[-1].current_frame = 9
-        target1_sprites[-1].animation_time = 2.0
+        target1_sprites[-1].animation_time = 0.0
         target1_sprites[-1].hit = False
 
         target2_sprites[-1].idle_animation_direction = "up"
         target2_sprites[-1].current_frame = 5
-        target2_sprites[-1].animation_time = 2.0
+        target2_sprites[-1].animation_time = 0.0
         target2_sprites[-1].hit = False
 
         target3_sprites[-1].idle_animation_direction = "up"
@@ -504,7 +504,6 @@ screen shooting_gallery:
     add bullet_SM
     image "images/score-background.png" pos (660, 950)
     text "Tiempo: {:.0f}        Puntaje: [score]".format(countdown_time) color "#FFFFFF" outlines [(absolute(1), "#00000050", absolute(1), absolute(1))] size 32 align (0.5, 0.95)
-    #text "Tiempo: {:.0f}".format(countdown_time) color "#FFFFFF" outlines [(absolute(1), "#00000050", absolute(1), absolute(1))] size 28 pos (1025, 990) anchor(0.0, 0.0)
     timer 1.0 action If(countdown_time > 0, true = SetVariable("countdown_time", countdown_time - 1.0), false = Show("shooting_end")) repeat If(countdown_time > 0, true = True, false = False)
 
 
@@ -517,11 +516,8 @@ screen shooting_end:
         padding (540, 540)
         text "¡Terminó el tiempo!" color "#ffffff" align(0.5, 2.0) size 60
         text "Tu puntaje es de [score] puntos" color "#ffffff" align(0.5, 0.75) size 50
-
-        imagebutton auto "images/button-restart-%s.png" align(0.5, -0.75) action [Hide("shooting_gallery"), Function(prepareShootingGallery), Show("shooting_gallery")]
-        #imagebutton auto "images/button-exit-%s.png" align(0.55, 0.7) action[Hide("shooting_gallery"), Function(prepareShootingGallery), SetVariable("default_mouse", None), SetVariable("shooter_gallery", False)]
-    timer 2.0 action [Function(prepareShootingGallery)]
-
+        imagebutton auto "images/button-restart-%s.png" align(0.15, -0.75) action [Hide("shooting_gallery"), Function(prepareShootingGallery), Show("shooting_gallery")]
+        imagebutton auto "images/button-exit-%s.png" align(0.85, -0.75) action[Hide("shooting_gallery"), Hide("shooting_gallery"), Function(prepareShootingGallery), SetVariable("default_mouse", None), SetVariable("shooting_gallery", False)]
 
 
 # Configs 
@@ -531,10 +527,27 @@ define config.mouse["targetgame"] = [("images/target-pointer.png", 17, 10)]
 
 define config.font_name_map["bold"] = "NotoSans-ExtraBold.ttf"
 
+image basil = "gui/presplash.png"
+image bg = "gui/bg1.png"
+
+transform bigger_size:
+    zoom 1.5
+
+label splashscreen:
+    scene bg
+    with Pause(0.25)
+
+    show basil at truecenter, bigger_size with dissolve
+    with Pause(0.75)
+
+    hide basil with dissolve
+    with Pause(0.25)
+
+    return
+
 # Start
 
 label start:
-
 
     # Target variables
     $target1_SM = SpriteManager(update = target1Update)
@@ -558,7 +571,8 @@ label start:
 
     # Other variables
     $score = 0
-    $initial_countdown_time = 60.0
+    ### Total time = 20 sec
+    $initial_countdown_time = 10.0
     $countdown_time = initial_countdown_time
     $shooting_gallery = False
 

@@ -1,6 +1,6 @@
 init python:
     
-    config.minimum_presplash_time = 10.0
+    config.minimum_presplash_time = 1.0
 
     config.keymap = dict(
 
