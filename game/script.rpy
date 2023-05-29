@@ -520,7 +520,8 @@ screen shooting_end:
         imagebutton auto "images/button-exit-%s.png" align(0.85, -0.75) action[Hide("shooting_gallery"), Hide("shooting_gallery"), Function(prepareShootingGallery), SetVariable("default_mouse", None), SetVariable("shooting_gallery", False)]
 
 
-# Configs 
+
+# Configs & Preplash
 
 define config.mouse = {}
 define config.mouse["targetgame"] = [("images/target-pointer.png", 17, 10)]
@@ -529,6 +530,7 @@ define config.font_name_map["bold"] = "NotoSans-ExtraBold.ttf"
 
 image basil = "gui/presplash.png"
 image bg = "gui/bg1.png"
+
 
 transform bigger_size:
     zoom 1.5
